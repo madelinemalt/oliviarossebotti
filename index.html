@@ -3,115 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olivia Rose Botti</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <title>Olivia Rees-Benjamin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --blush: #F2A7B3;
-            --rose: #E8637A;
-            --mauve: #C9A0DC;
-            --lavender: #B8A9E8;
-            --sky: #A8D8EA;
-            --mint: #B5EAD7;
-            --peach: #FFD5C2;
-            --champagne: #F7E7CE;
-            --cream: #FFF8F0;
-            --warm-white: #FFFAF5;
-            --dark: #2D2235;
-            --text: #3D2E4A;
-            --text-light: #7A6B8A;
+            --ink: #1a1a2e;
+            --charcoal: #2d2d3f;
+            --slate: #6b6b80;
+            --silver: #9d9daf;
+            --mist: #e8e8ef;
+            --ghost: #f4f4f8;
+            --white: #fafafe;
+            --rose: #c45c6a;
+            --rose-soft: #d4848e;
+            --rose-pale: rgba(196, 92, 106, 0.06);
+            --rose-glow: rgba(196, 92, 106, 0.12);
+            --blush: #f0e4e6;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'DM Sans', sans-serif;
-            background: var(--warm-white);
-            color: var(--text);
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--white);
+            color: var(--charcoal);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* ============ FLOATING SHAPES BACKGROUND ============ */
-        .floating-shapes {
+        /* ============ GRAIN OVERLAY ============ */
+        body::after {
+            content: '';
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            z-index: 0;
             pointer-events: none;
-            overflow: hidden;
-        }
-
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.15;
-        }
-
-        .shape-1 {
-            width: 400px; height: 400px;
-            background: linear-gradient(135deg, var(--blush), var(--mauve));
-            top: -5%; right: -5%;
-            animation: float1 18s ease-in-out infinite;
-        }
-        .shape-2 {
-            width: 300px; height: 300px;
-            background: linear-gradient(135deg, var(--lavender), var(--sky));
-            top: 40%; left: -8%;
-            animation: float2 22s ease-in-out infinite;
-        }
-        .shape-3 {
-            width: 250px; height: 250px;
-            background: linear-gradient(135deg, var(--mint), var(--champagne));
-            bottom: 10%; right: 10%;
-            animation: float3 20s ease-in-out infinite;
-        }
-        .shape-4 {
-            width: 200px; height: 200px;
-            background: linear-gradient(135deg, var(--peach), var(--blush));
-            top: 60%; left: 40%;
-            animation: float1 25s ease-in-out infinite reverse;
-        }
-        .shape-5 {
-            width: 150px; height: 150px;
-            background: linear-gradient(135deg, var(--sky), var(--lavender));
-            top: 20%; left: 60%;
-            animation: float2 16s ease-in-out infinite reverse;
-        }
-
-        @keyframes float1 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(40px, -60px) rotate(90deg); }
-            50% { transform: translate(-30px, 40px) rotate(180deg); }
-            75% { transform: translate(60px, 20px) rotate(270deg); }
-        }
-        @keyframes float2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(80px, -40px) scale(1.1); }
-            66% { transform: translate(-50px, 60px) scale(0.9); }
-        }
-        @keyframes float3 {
-            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
-            50% { transform: translate(-60px, -40px) rotate(180deg) scale(1.15); }
-        }
-
-        /* ============ PETAL PARTICLES ============ */
-        .petal {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            font-size: 16px;
-            animation: petalFall linear forwards;
-        }
-
-        @keyframes petalFall {
-            0% { opacity: 0.8; transform: translateY(0) rotate(0deg) translateX(0); }
-            25% { transform: translateY(25vh) rotate(90deg) translateX(30px); }
-            50% { transform: translateY(50vh) rotate(180deg) translateX(-20px); }
-            75% { transform: translateY(75vh) rotate(270deg) translateX(40px); }
-            100% { opacity: 0; transform: translateY(105vh) rotate(360deg) translateX(10px); }
+            z-index: 9998;
+            opacity: 0.018;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
         /* ============ NAV ============ */
@@ -119,711 +49,531 @@
             position: fixed;
             top: 0; left: 0;
             width: 100%;
-            padding: 20px 50px;
+            padding: 0 60px;
+            height: 64px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            background: rgba(255, 248, 240, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(242, 167, 179, 0.15);
+            background: rgba(250, 250, 254, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
 
-        .nav-logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--rose);
-            font-style: italic;
+        .nav-name {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.15rem;
+            color: var(--ink);
+            letter-spacing: -0.01em;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 36px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text-light);
+            color: var(--slate);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 500;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px; left: 50%;
-            width: 0; height: 2px;
-            background: linear-gradient(90deg, var(--blush), var(--lavender));
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover { color: var(--rose); }
-        .nav-links a:hover::after { width: 100%; }
 
         /* ============ HERO ============ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-            padding: 120px 40px 80px;
+            padding: 120px 60px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            width: 100%;
         }
 
-        .hero-photo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
+        .hero-text { max-width: 520px; }
 
-        .hero-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
-            border: 5px solid var(--warm-white);
-            box-shadow:
-                0 0 0 2px var(--blush),
-                0 20px 60px rgba(232, 99, 122, 0.2),
-                0 0 100px rgba(201, 160, 220, 0.15);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .hero-photo:hover {
-            transform: scale(1.05) rotate(3deg);
-        }
-
-        .hero-photo-ring {
-            position: absolute;
-            top: -10px; left: -10px;
-            right: -10px; bottom: -10px;
-            border-radius: 50%;
-            border: 2px dashed var(--mauve);
-            animation: spinSlow 20s linear infinite;
-            opacity: 0.5;
-        }
-
-        @keyframes spinSlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hero-sparkle {
-            position: absolute;
-            font-size: 1.2rem;
-            animation: twinkle 2s ease-in-out infinite;
-        }
-        .hero-sparkle:nth-child(2) { top: -5px; right: 20px; animation-delay: 0s; }
-        .hero-sparkle:nth-child(3) { top: 30px; left: -15px; animation-delay: 0.5s; }
-        .hero-sparkle:nth-child(4) { bottom: 10px; right: -10px; animation-delay: 1s; }
-        .hero-sparkle:nth-child(5) { bottom: 30px; left: 10px; animation-delay: 1.5s; }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        .hero-badge {
+        .hero-label {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 20px;
-            background: linear-gradient(135deg, rgba(242, 167, 179, 0.15), rgba(201, 160, 220, 0.15));
-            border: 1px solid rgba(242, 167, 179, 0.3);
-            border-radius: 50px;
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             font-weight: 600;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: var(--rose);
-            margin-bottom: 28px;
+            margin-bottom: 24px;
+        }
+
+        .hero-label::before {
+            content: '';
+            width: 24px; height: 1px;
+            background: var(--rose);
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            font-weight: 800;
-            line-height: 1.05;
-            margin-bottom: 20px;
-            color: var(--dark);
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(3rem, 5.5vw, 4.5rem);
+            font-weight: 400;
+            line-height: 1.08;
+            color: var(--ink);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
         }
 
-        .hero h1 .italic {
+        .hero h1 em {
             font-style: italic;
-            background: linear-gradient(135deg, var(--rose), var(--mauve), var(--lavender));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--rose);
         }
 
-        .hero-sub {
-            font-size: 1.15rem;
-            color: var(--text-light);
-            line-height: 1.7;
-            max-width: 550px;
-            margin: 0 auto 40px;
+        .hero-desc {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: var(--slate);
+            margin-bottom: 36px;
         }
 
-        .hero-tags {
+        .hero-stats {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+            gap: 40px;
         }
 
-        .hero-tag {
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-num {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2rem;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat-label {
+            font-size: 0.72rem;
             font-weight: 500;
-            border: 1px solid;
-            transition: all 0.3s ease;
-            cursor: default;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
-        .hero-tag:hover { transform: translateY(-3px) scale(1.05); }
-
-        .tag-rose { border-color: var(--blush); color: var(--rose); background: rgba(242, 167, 179, 0.08); }
-        .tag-rose:hover { background: rgba(242, 167, 179, 0.2); }
-        .tag-lavender { border-color: var(--lavender); color: #8B74C8; background: rgba(184, 169, 232, 0.08); }
-        .tag-lavender:hover { background: rgba(184, 169, 232, 0.2); }
-        .tag-sky { border-color: var(--sky); color: #5BA3B5; background: rgba(168, 216, 234, 0.08); }
-        .tag-sky:hover { background: rgba(168, 216, 234, 0.2); }
-        .tag-mint { border-color: var(--mint); color: #5DAE93; background: rgba(181, 234, 215, 0.08); }
-        .tag-mint:hover { background: rgba(181, 234, 215, 0.2); }
-        .tag-peach { border-color: var(--peach); color: #D4825F; background: rgba(255, 213, 194, 0.08); }
-        .tag-peach:hover { background: rgba(255, 213, 194, 0.2); }
-
-        /* ============ MARQUEE ============ */
-        .marquee-section {
-            overflow: hidden;
-            padding: 24px 0;
-            border-top: 1px solid rgba(201, 160, 220, 0.15);
-            border-bottom: 1px solid rgba(201, 160, 220, 0.15);
+        .hero-visual {
+            display: flex;
+            justify-content: center;
             position: relative;
-            z-index: 2;
         }
 
-        .marquee-track {
-            display: inline-flex;
-            animation: scroll 30s linear infinite;
+        .hero-photo-wrap {
+            position: relative;
         }
 
-        .marquee-item {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
+        .hero-photo {
+            width: 360px;
+            height: 440px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 200px 200px 24px 24px;
+            filter: grayscale(15%);
+            transition: all 0.5s ease;
+        }
+
+        .hero-photo:hover {
+            filter: grayscale(0%);
+            transform: translateY(-6px);
+        }
+
+        .hero-photo-border {
+            position: absolute;
+            top: -8px; left: -8px;
+            right: -8px; bottom: -8px;
+            border-radius: 208px 208px 32px 32px;
+            border: 1px solid var(--mist);
+            pointer-events: none;
+        }
+
+        .hero-photo-accent {
+            position: absolute;
+            bottom: -16px; right: -16px;
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            background: var(--rose-pale);
+            border: 1px solid var(--rose-glow);
+            z-index: -1;
+        }
+
+        /* ============ TICKER ============ */
+        .ticker {
+            border-top: 1px solid var(--mist);
+            border-bottom: 1px solid var(--mist);
+            padding: 18px 0;
+            overflow: hidden;
             white-space: nowrap;
-            margin-right: 50px;
-            color: rgba(61, 46, 74, 0.12);
         }
 
-        .marquee-item.accent {
+        .ticker-track {
+            display: inline-flex;
+            animation: tickerScroll 40s linear infinite;
+        }
+
+        .ticker-item {
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--silver);
+            margin-right: 48px;
+            display: inline-flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .ticker-item.accent {
+            color: var(--rose-soft);
+            font-family: 'Instrument Serif', serif;
             font-style: italic;
-            color: var(--blush);
-            opacity: 0.6;
+            text-transform: none;
+            font-size: 0.95rem;
+            letter-spacing: 0;
         }
 
-        .marquee-divider {
-            color: var(--mauve);
-            opacity: 0.3;
-            margin-right: 50px;
-            font-size: 1.3rem;
+        .ticker-dot {
+            width: 3px; height: 3px;
+            border-radius: 50%;
+            background: var(--mist);
+            flex-shrink: 0;
         }
 
-        @keyframes scroll {
+        @keyframes tickerScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
 
         /* ============ SECTIONS ============ */
         section {
-            position: relative;
-            z-index: 2;
-            padding: 100px 40px;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 100px 60px;
         }
 
-        .section-eyebrow {
-            font-size: 0.72rem;
+        .section-label {
+            font-size: 0.7rem;
             font-weight: 600;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: var(--mauve);
+            color: var(--rose);
             margin-bottom: 12px;
         }
 
-        .section-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 50px;
-            line-height: 1.15;
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 56px;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
         }
 
-        .section-heading em {
+        .section-title em {
             font-style: italic;
             color: var(--rose);
         }
 
-        /* ============ ABOUT ============ */
-        .about-layout {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .about-text p {
-            font-size: 1.05rem;
-            line-height: 1.85;
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .about-text strong {
-            color: var(--dark);
-            font-weight: 600;
-        }
-
-        .about-text .pop {
-            color: var(--rose);
-            font-weight: 600;
-        }
-
-        .fun-facts {
-            display: grid;
-            gap: 16px;
-        }
-
-        .fun-fact {
+        /* ============ EXPERIENCE ============ */
+        .exp-list {
             display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 20px 24px;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid rgba(201, 160, 220, 0.12);
-            box-shadow: 0 4px 20px rgba(201, 160, 220, 0.06);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .exp-row {
+            display: grid;
+            grid-template-columns: 160px 1fr auto;
+            gap: 32px;
+            align-items: baseline;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--ghost);
+            transition: all 0.3s ease;
             cursor: default;
         }
 
-        .fun-fact:hover {
-            transform: translateX(10px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(232, 99, 122, 0.12);
-            border-color: var(--blush);
+        .exp-row:first-child { border-top: 1px solid var(--ghost); }
+
+        .exp-row:hover {
+            padding-left: 12px;
+            background: var(--rose-pale);
+            margin: 0 -12px;
+            padding-right: 12px;
+            border-radius: 8px;
         }
 
-        .fun-fact-icon {
-            font-size: 1.8rem;
-            flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
+        .exp-row:hover .exp-row-title { color: var(--rose); }
 
-        .fun-fact:hover .fun-fact-icon {
-            transform: scale(1.2) rotate(-10deg);
-        }
-
-        .fun-fact-text {
-            font-size: 0.9rem;
+        .exp-row-date {
+            font-size: 0.78rem;
+            color: var(--silver);
             font-weight: 500;
-            color: var(--dark);
+            letter-spacing: 0.02em;
+            padding-top: 2px;
         }
 
-        .fun-fact-sub {
-            font-size: 0.78rem;
-            color: var(--text-light);
-            font-weight: 400;
-            margin-top: 2px;
+        .exp-row-main {
+            min-width: 0;
         }
 
-        /* ============ EXPERIENCE ============ */
-        .exp-timeline {
-            position: relative;
+        .exp-row-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.25rem;
+            color: var(--ink);
+            transition: color 0.2s ease;
+            margin-bottom: 2px;
         }
 
-        .exp-timeline::before {
-            content: '';
-            position: absolute;
-            left: 140px;
-            top: 0; bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--blush), var(--lavender), var(--sky), var(--mint));
-            border-radius: 2px;
-        }
-
-        .exp-item {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeUp 0.6s ease forwards;
-        }
-
-        .exp-item:nth-child(1) { animation-delay: 0.1s; }
-        .exp-item:nth-child(2) { animation-delay: 0.2s; }
-        .exp-item:nth-child(3) { animation-delay: 0.3s; }
-        .exp-item:nth-child(4) { animation-delay: 0.4s; }
-        .exp-item:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .exp-date {
-            text-align: right;
-            padding-top: 24px;
-            font-size: 0.78rem;
+        .exp-row-company {
+            font-size: 0.85rem;
             font-weight: 600;
-            letter-spacing: 0.05em;
-            color: var(--text-light);
+            color: var(--charcoal);
+            margin-bottom: 6px;
         }
 
-        .exp-dot {
-            position: absolute;
-            left: 134px;
-            top: 28px;
-            width: 14px; height: 14px;
-            border-radius: 50%;
-            background: white;
-            border: 3px solid var(--blush);
-            z-index: 2;
+        .exp-row-desc {
+            font-size: 0.85rem;
+            color: var(--slate);
+            line-height: 1.6;
+        }
+
+        .exp-row-arrow {
+            font-size: 1.2rem;
+            color: var(--mist);
             transition: all 0.3s ease;
+            padding-top: 2px;
         }
 
-        .exp-item:hover .exp-dot {
-            background: var(--rose);
-            border-color: var(--rose);
-            box-shadow: 0 0 20px rgba(232, 99, 122, 0.4);
-            transform: scale(1.3);
+        .exp-row:hover .exp-row-arrow {
+            color: var(--rose);
+            transform: translateX(4px);
         }
 
-        .exp-card {
-            background: white;
-            border: 1px solid rgba(201, 160, 220, 0.1);
-            border-radius: 20px;
-            padding: 28px 32px;
-            box-shadow: 0 4px 24px rgba(201, 160, 220, 0.06);
-            transition: all 0.4s ease;
+        /* ============ ABOUT GRID ============ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .about-card {
+            padding: 32px 28px;
+            border: 1px solid var(--mist);
+            border-radius: 16px;
+            transition: all 0.35s ease;
+            cursor: default;
             position: relative;
             overflow: hidden;
         }
 
-        .exp-card::before {
+        .about-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0;
-            width: 4px; height: 100%;
-            background: linear-gradient(to bottom, var(--blush), var(--lavender));
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            width: 100%; height: 2px;
+            background: linear-gradient(90deg, var(--rose), var(--rose-soft));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
         }
 
-        .exp-item:hover .exp-card::before { opacity: 1; }
+        .about-card:hover::before { transform: scaleX(1); }
 
-        .exp-item:hover .exp-card {
-            transform: translateX(6px);
-            box-shadow: 0 12px 40px rgba(232, 99, 122, 0.1);
-            border-color: rgba(242, 167, 179, 0.3);
+        .about-card:hover {
+            border-color: rgba(196, 92, 106, 0.15);
+            box-shadow: 0 12px 40px rgba(196, 92, 106, 0.06);
+            transform: translateY(-4px);
         }
 
-        .exp-role {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 4px;
+        .about-card-icon {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
         }
 
-        .exp-company {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--rose);
-            margin-bottom: 10px;
+        .about-card-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.15rem;
+            color: var(--ink);
+            margin-bottom: 8px;
         }
 
-        .exp-desc {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text-light);
+        .about-card-text {
+            font-size: 0.82rem;
+            color: var(--slate);
+            line-height: 1.65;
         }
 
-        .exp-tags {
+        /* ============ EDUCATION ============ */
+        .edu-row {
             display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 14px;
+            align-items: center;
+            gap: 32px;
+            padding: 36px 40px;
+            border: 1px solid var(--mist);
+            border-radius: 16px;
+            transition: all 0.3s ease;
         }
 
-        .exp-tag {
+        .edu-row:hover {
+            border-color: rgba(196, 92, 106, 0.15);
+            box-shadow: 0 8px 30px rgba(196, 92, 106, 0.06);
+        }
+
+        .edu-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .edu-school {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.3rem;
+            color: var(--ink);
+        }
+
+        .edu-degree {
+            font-size: 0.88rem;
+            color: var(--slate);
+            margin-top: 2px;
+        }
+
+        .edu-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .edu-tag {
             padding: 4px 14px;
             border-radius: 50px;
             font-size: 0.7rem;
             font-weight: 600;
             letter-spacing: 0.03em;
-            background: rgba(242, 167, 179, 0.08);
-            color: var(--rose);
-            border: 1px solid rgba(242, 167, 179, 0.15);
+            border: 1px solid var(--mist);
+            color: var(--slate);
         }
 
-        /* ============ EDUCATION ============ */
-        .edu-card-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        .edu-card {
-            background: white;
-            border: 1px solid rgba(201, 160, 220, 0.12);
-            border-radius: 24px;
-            padding: 48px 56px;
-            box-shadow: 0 8px 40px rgba(201, 160, 220, 0.08);
-            text-align: center;
-            max-width: 500px;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .edu-card::after {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(242, 167, 179, 0.05), transparent, rgba(184, 169, 232, 0.05), transparent);
-            animation: cardSpin 8s linear infinite;
-        }
-
-        @keyframes cardSpin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .edu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(232, 99, 122, 0.12);
-        }
-
-        .edu-icon {
-            font-size: 3rem;
-            margin-bottom: 16px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .edu-school {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 8px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .edu-degree {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            margin-bottom: 6px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .edu-years {
-            font-size: 0.8rem;
-            color: var(--mauve);
-            font-weight: 600;
-            position: relative;
-            z-index: 1;
-        }
-
-        .edu-extras {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 16px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .edu-extra-tag {
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, rgba(242, 167, 179, 0.1), rgba(184, 169, 232, 0.1));
-            color: var(--rose);
-            border: 1px solid rgba(242, 167, 179, 0.2);
-        }
-
-        /* ============ JUNI SECTION ============ */
-        #juni {
-            text-align: center;
-        }
-
-        .juni-gallery {
+        /* ============ JUNI ============ */
+        .juni-layout {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
             max-width: 700px;
             margin: 0 auto;
         }
 
-        .juni-card {
-            border-radius: 24px;
+        .juni-img-wrap {
+            border-radius: 16px;
             overflow: hidden;
-            position: relative;
+            border: 1px solid var(--mist);
+            transition: all 0.4s ease;
             cursor: pointer;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 8px 30px rgba(201, 160, 220, 0.1);
-            border: 3px solid white;
         }
 
-        .juni-card:first-child {
+        .juni-img-wrap:first-child {
             grid-row: span 2;
         }
 
-        .juni-card:hover {
-            transform: scale(1.03) rotate(-1deg);
-            box-shadow: 0 20px 60px rgba(232, 99, 122, 0.2);
-            border-color: var(--blush);
+        .juni-img-wrap:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 50px rgba(196, 92, 106, 0.1);
+            border-color: rgba(196, 92, 106, 0.2);
         }
 
-        .juni-card:nth-child(2):hover { transform: scale(1.03) rotate(1deg); }
-
-        .juni-card img {
+        .juni-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
-        .juni-card:hover img { transform: scale(1.08); }
+        .juni-img-wrap:hover img { transform: scale(1.05); }
 
-        .juni-caption {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(45, 34, 53, 0.7));
-            color: white;
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            font-style: italic;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .juni-card:hover .juni-caption { opacity: 1; }
-
-        /* ============ QUOTE SECTION ============ */
-        .quote-section {
+        /* ============ STATEMENT ============ */
+        .statement {
             text-align: center;
-            padding: 120px 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .quote-text {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            font-style: italic;
-            line-height: 1.3;
-            max-width: 800px;
+            padding: 120px 60px;
+            max-width: 900px;
             margin: 0 auto;
-            background: linear-gradient(135deg, var(--rose), var(--mauve), var(--lavender));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 200%;
-            animation: gradientShift 6s ease infinite;
         }
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .quote-sub {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin-top: 20px;
+        .statement-text {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             font-weight: 400;
+            line-height: 1.35;
+            color: var(--ink);
+            letter-spacing: -0.02em;
+        }
+
+        .statement-text em {
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .statement-line {
+            width: 48px; height: 1px;
+            background: var(--rose);
+            margin: 28px auto 0;
         }
 
         /* ============ FOOTER ============ */
         footer {
             text-align: center;
-            padding: 80px 40px;
-            position: relative;
-            z-index: 2;
-            border-top: 1px solid rgba(201, 160, 220, 0.12);
-        }
-
-        .footer-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 20px;
+            padding: 60px;
+            border-top: 1px solid var(--mist);
         }
 
         .footer-link {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 14px 40px;
-            background: linear-gradient(135deg, var(--rose), var(--mauve));
+            padding: 14px 36px;
+            background: var(--ink);
             color: white;
             text-decoration: none;
             border-radius: 60px;
+            font-size: 0.82rem;
             font-weight: 600;
-            font-size: 0.9rem;
             letter-spacing: 0.04em;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 30px rgba(232, 99, 122, 0.25);
+            transition: all 0.3s ease;
         }
 
         .footer-link:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 50px rgba(232, 99, 122, 0.35);
+            background: var(--rose);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(196, 92, 106, 0.25);
         }
 
         .footer-copy {
-            margin-top: 40px;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            opacity: 0.5;
+            margin-top: 32px;
+            font-size: 0.72rem;
+            color: var(--silver);
         }
 
         /* ============ SCROLL REVEAL ============ */
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(24px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.visible {
@@ -831,349 +581,243 @@
             transform: translateY(0);
         }
 
-        /* ============ CLICK HEARTS ============ */
-        .click-heart {
+        /* ============ CURSOR GLOW (subtle) ============ */
+        .cursor-glow {
             position: fixed;
+            width: 300px; height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(196, 92, 106, 0.04) 0%, transparent 70%);
             pointer-events: none;
-            z-index: 9999;
-            font-size: 20px;
-            animation: heartFloat 1s ease forwards;
-        }
-
-        @keyframes heartFloat {
-            0% { opacity: 1; transform: translateY(0) scale(0.5) rotate(0deg); }
-            50% { opacity: 0.8; transform: translateY(-40px) scale(1.2) rotate(15deg); }
-            100% { opacity: 0; transform: translateY(-80px) scale(0.3) rotate(-10deg); }
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s ease;
         }
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 768px) {
-            nav { padding: 16px 20px; }
+            nav { padding: 0 24px; }
             .nav-links { display: none; }
-            section { padding: 60px 20px; }
-            .about-layout { grid-template-columns: 1fr; gap: 40px; }
-            .exp-timeline::before { left: 20px; }
-            .exp-item { grid-template-columns: 1fr; gap: 0; padding-left: 40px; }
-            .exp-date { text-align: left; padding-top: 0; margin-bottom: 4px; }
-            .exp-dot { left: 14px; top: 4px; }
-            .juni-gallery { grid-template-columns: 1fr; }
-            .juni-card:first-child { grid-row: auto; }
+            .hero { padding: 100px 24px 60px; }
+            .hero-layout { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .hero-visual { order: -1; }
+            .hero-photo { width: 260px; height: 320px; }
+            .hero-stats { justify-content: center; }
+            section { padding: 60px 24px; }
+            .exp-row { grid-template-columns: 1fr; gap: 4px; }
+            .exp-row-date { order: -1; }
+            .exp-row-arrow { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .juni-layout { grid-template-columns: 1fr; }
+            .juni-img-wrap:first-child { grid-row: auto; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
-        <div class="shape shape-5"></div>
-    </div>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-    <!-- Navigation -->
+    <!-- Nav -->
     <nav>
-        <div class="nav-logo">Olivia Rose Botti</div>
+        <div class="nav-name">Olivia Rees-Benjamin</div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#juni">Juni</a></li>
         </ul>
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-photo-container">
-                <div class="hero-photo-ring"></div>
-                <span class="hero-sparkle">&#10022;</span>
-                <span class="hero-sparkle">&#10022;</span>
-                <span class="hero-sparkle">&#10022;</span>
-                <span class="hero-sparkle">&#10022;</span>
-                <img src="olivia.png" alt="Olivia Rose Botti" class="hero-photo">
+    <div class="hero">
+        <div class="hero-layout">
+            <div class="hero-text">
+                <div class="hero-label">Director & COO</div>
+                <h1>Olivia<br>Rees-<em>Benjamin</em></h1>
+                <p class="hero-desc">
+                    Director & COO at Goldsmith & Co. Former Citadel. Six years of executive search across hedge funds, private equity, and venture capital. Runs the firm, runs the searches, runs the miles.
+                </p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">6+</div>
+                        <div class="hero-stat-label">Years in Search</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">NYC</div>
+                        <div class="hero-stat-label">Based</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num">COO</div>
+                        <div class="hero-stat-label">of the Firm</div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-badge">&#10024; Director &middot; COO &middot; Slayer &#10024;</div>
-            <h1>Olivia Rose<br><span class="italic">Botti</span></h1>
-            <p class="hero-sub">
-                Director & COO at Goldsmith & Co. Former Citadel. Hamilton alum. Runner, dancer, dog mom. She does it all.
-            </p>
-            <div class="hero-tags">
-                <span class="hero-tag tag-rose">Executive Search</span>
-                <span class="hero-tag tag-lavender">Alternative Investments</span>
-                <span class="hero-tag tag-sky">Runner</span>
-                <span class="hero-tag tag-mint">Dance Minor</span>
-                <span class="hero-tag tag-peach">Dog Mom</span>
+            <div class="hero-visual">
+                <div class="hero-photo-wrap">
+                    <div class="hero-photo-border"></div>
+                    <img src="olivia.png" alt="Olivia Rees-Benjamin" class="hero-photo">
+                    <div class="hero-photo-accent"></div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee-section">
-        <div class="marquee-track">
-            <span class="marquee-item accent">She Does It All</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Hedge Funds</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Private Equity</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Venture Capital</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Solidcore Girlie</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Chief of Staff Searches</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Juni's Mom</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">COO Energy</span>
-            <span class="marquee-divider">&#10022;</span>
-            <!-- Duplicate for seamless loop -->
-            <span class="marquee-item accent">She Does It All</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Hedge Funds</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Private Equity</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Venture Capital</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Solidcore Girlie</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">Chief of Staff Searches</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item accent">Juni's Mom</span>
-            <span class="marquee-divider">&#10022;</span>
-            <span class="marquee-item">COO Energy</span>
-            <span class="marquee-divider">&#10022;</span>
         </div>
     </div>
 
-    <!-- About -->
-    <section id="about" class="reveal">
-        <div class="section-eyebrow">Get to Know</div>
-        <div class="section-heading">The one who <em>does it all.</em></div>
-        <div class="about-layout">
-            <div class="about-text">
-                <p>
-                    Olivia is a <strong>Director & COO at Goldsmith & Co</strong>, the boutique retained search firm focused exclusively on asset management. She specializes in placing top talent at hedge funds, PE firms, VC shops, and beyond &mdash; with deep expertise in <span class="pop">Chief of Staff, IR, and senior operational roles</span>.
-                </p>
-                <p>
-                    Before returning to Goldsmith, she spent time at <strong>Citadel</strong> in Business Development, bringing institutional knowledge from one of the world's most elite hedge funds. Before that, she rose through the ranks at <strong>H.W. Anderson</strong>, going from Associate Consultant to Senior Consultant in under three years, recruiting across equity long/short, quantitative, and commodity trading.
-                </p>
-                <p>
-                    She's been in the game for <strong>6+ years</strong> and brings the kind of energy that makes both candidates and clients feel like they're in the best hands possible.
-                </p>
-            </div>
-            <div class="fun-facts">
-                <div class="fun-fact">
-                    <span class="fun-fact-icon">&#128131;</span>
-                    <div>
-                        <div class="fun-fact-text">Dance Minor</div>
-                        <div class="fun-fact-sub">Hamilton College &mdash; yes, she has range</div>
-                    </div>
-                </div>
-                <div class="fun-fact">
-                    <span class="fun-fact-icon">&#127939;</span>
-                    <div>
-                        <div class="fun-fact-text">Runner</div>
-                        <div class="fun-fact-sub">Hitting the pavement, NYC style</div>
-                    </div>
-                </div>
-                <div class="fun-fact">
-                    <span class="fun-fact-icon">&#128170;</span>
-                    <div>
-                        <div class="fun-fact-text">Solidcore</div>
-                        <div class="fun-fact-sub">If you know, you know</div>
-                    </div>
-                </div>
-                <div class="fun-fact">
-                    <span class="fun-fact-icon">&#128054;</span>
-                    <div>
-                        <div class="fun-fact-text">Dog Mom to Juni</div>
-                        <div class="fun-fact-sub">The real star of this website</div>
-                    </div>
-                </div>
-                <div class="fun-fact">
-                    <span class="fun-fact-icon">&#128081;</span>
-                    <div>
-                        <div class="fun-fact-text">COO of the Firm</div>
-                        <div class="fun-fact-sub">Running the show behind the scenes</div>
-                    </div>
-                </div>
-            </div>
+    <!-- Ticker -->
+    <div class="ticker">
+        <div class="ticker-track">
+            <span class="ticker-item">Executive Search <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Gets it done <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Hedge Funds <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Certified sharp <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Private Equity <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">No BS <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Chief of Staff Searches <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Straight shooter <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Venture Capital <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Runs the show <span class="ticker-dot"></span></span>
+            <!-- Duplicate -->
+            <span class="ticker-item">Executive Search <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Gets it done <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Hedge Funds <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Certified sharp <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Private Equity <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">No BS <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Chief of Staff Searches <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Straight shooter <span class="ticker-dot"></span></span>
+            <span class="ticker-item">Venture Capital <span class="ticker-dot"></span></span>
+            <span class="ticker-item accent">Runs the show <span class="ticker-dot"></span></span>
         </div>
-    </section>
+    </div>
 
     <!-- Experience -->
     <section id="experience" class="reveal">
-        <div class="section-eyebrow">The Journey</div>
-        <div class="section-heading">From analyst to <em>running the show.</em></div>
-        <div class="exp-timeline">
-            <div class="exp-item">
-                <div class="exp-date">Dec 2025 &mdash;<br>Present</div>
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-role">Director & COO</div>
-                    <div class="exp-company">Goldsmith & Co</div>
-                    <div class="exp-desc">Back and better than ever. Running operations and leading executive searches across alternative investments. Placing professionals in IR, Chief of Staff, COO, and senior operational roles at the world's top buy-side firms.</div>
-                    <div class="exp-tags">
-                        <span class="exp-tag">COO</span>
-                        <span class="exp-tag">Executive Search</span>
-                        <span class="exp-tag">Alt Investments</span>
-                    </div>
+        <div class="section-label">Experience</div>
+        <div class="section-title">From the trading floor to <em>running the firm.</em></div>
+        <div class="exp-list">
+            <div class="exp-row">
+                <div class="exp-row-date">2025 &mdash; Present</div>
+                <div class="exp-row-main">
+                    <div class="exp-row-title">Director & COO</div>
+                    <div class="exp-row-company">Goldsmith & Co</div>
+                    <div class="exp-row-desc">Back at Goldsmith running operations and leading searches across alternative investments. Placing IR, Chief of Staff, COO, and senior operational talent at the top buy-side firms.</div>
                 </div>
+                <div class="exp-row-arrow">&rarr;</div>
             </div>
-            <div class="exp-item">
-                <div class="exp-date">Sep 2024 &mdash;<br>Dec 2025</div>
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-role">Business Development</div>
-                    <div class="exp-company">Citadel</div>
-                    <div class="exp-desc">Brought her talent expertise to one of the most prestigious hedge funds in the world. Developed deep institutional knowledge of the buy-side from the inside.</div>
-                    <div class="exp-tags">
-                        <span class="exp-tag">Hedge Fund</span>
-                        <span class="exp-tag">Business Development</span>
-                    </div>
+            <div class="exp-row">
+                <div class="exp-row-date">2024 &mdash; 2025</div>
+                <div class="exp-row-main">
+                    <div class="exp-row-title">Business Development</div>
+                    <div class="exp-row-company">Citadel</div>
+                    <div class="exp-row-desc">Institutional-grade experience at one of the world's most elite hedge funds. Deep buy-side knowledge, from the inside.</div>
                 </div>
+                <div class="exp-row-arrow">&rarr;</div>
             </div>
-            <div class="exp-item">
-                <div class="exp-date">Feb 2022 &mdash;<br>Aug 2024</div>
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-role">Director</div>
-                    <div class="exp-company">Goldsmith & Co</div>
-                    <div class="exp-desc">First stint at Goldsmith. Built out search capabilities, managed client relationships, and established herself as a go-to recruiter for senior operational roles in asset management.</div>
-                    <div class="exp-tags">
-                        <span class="exp-tag">Retained Search</span>
-                        <span class="exp-tag">Client Management</span>
-                    </div>
+            <div class="exp-row">
+                <div class="exp-row-date">2022 &mdash; 2024</div>
+                <div class="exp-row-main">
+                    <div class="exp-row-title">Director</div>
+                    <div class="exp-row-company">Goldsmith & Co</div>
+                    <div class="exp-row-desc">Built search capabilities and client relationships across asset management. Established herself as a go-to recruiter for senior operational roles.</div>
                 </div>
+                <div class="exp-row-arrow">&rarr;</div>
             </div>
-            <div class="exp-item">
-                <div class="exp-date">Aug 2019 &mdash;<br>Feb 2022</div>
-                <div class="exp-dot"></div>
-                <div class="exp-card">
-                    <div class="exp-role">Associate Consultant &rarr; Senior Consultant</div>
-                    <div class="exp-company">H.W. Anderson</div>
-                    <div class="exp-desc">Rose through three titles in under three years. Recruited across equity long/short, quantitative, and commodity trading markets. This is where the foundation was built.</div>
-                    <div class="exp-tags">
-                        <span class="exp-tag">L/S Equity</span>
-                        <span class="exp-tag">Quant</span>
-                        <span class="exp-tag">Commodities</span>
-                    </div>
+            <div class="exp-row">
+                <div class="exp-row-date">2019 &mdash; 2022</div>
+                <div class="exp-row-main">
+                    <div class="exp-row-title">Associate &rarr; Senior Consultant</div>
+                    <div class="exp-row-company">H.W. Anderson</div>
+                    <div class="exp-row-desc">Three promotions in under three years. Recruited across equity long/short, quantitative, and commodity trading markets. Where the foundation was built.</div>
                 </div>
+                <div class="exp-row-arrow">&rarr;</div>
             </div>
         </div>
     </section>
 
-    <!-- Education -->
-    <section id="education" class="reveal">
-        <div class="section-eyebrow">The Foundation</div>
-        <div class="section-heading">Brains <em>and</em> moves.</div>
-        <div class="edu-card-wrapper">
-            <div class="edu-card">
-                <div class="edu-icon">&#127891;</div>
-                <div class="edu-school">Hamilton College</div>
-                <div class="edu-degree">Bachelor of Arts &mdash; Economics</div>
-                <div class="edu-years">Class of 2019</div>
-                <div class="edu-extras">
-                    <span class="edu-extra-tag">&#128131; Dance Minor</span>
-                    <span class="edu-extra-tag">&#128200; Economics</span>
-                </div>
+    <!-- About -->
+    <section id="about" class="reveal">
+        <div class="section-label">Beyond the Resume</div>
+        <div class="section-title">The full <em>picture.</em></div>
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-card-icon">&#127891;</div>
+                <div class="about-card-title">Hamilton College</div>
+                <div class="about-card-text">B.A. in Economics with a Dance minor. Yes, both. Brains and discipline in equal measure.</div>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">&#127939;</div>
+                <div class="about-card-title">Runner</div>
+                <div class="about-card-text">Same energy she brings to the office. Consistent, focused, doesn't quit until it's done.</div>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">&#128170;</div>
+                <div class="about-card-title">Solidcore</div>
+                <div class="about-card-text">If you've done the [Megaformer], you know. If you haven't, that explains a lot.</div>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">&#128131;</div>
+                <div class="about-card-title">Dance Minor</div>
+                <div class="about-card-text">Poise under pressure isn't just a metaphor. Trained discipline, precision, and performance.</div>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">&#128081;</div>
+                <div class="about-card-title">COO Energy</div>
+                <div class="about-card-text">Runs the firm's operations. The person who makes sure everything actually works. No drama, just results.</div>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">&#128054;</div>
+                <div class="about-card-title">Dog Mom</div>
+                <div class="about-card-text">Juni is the real boss. Scroll down to see why.</div>
             </div>
         </div>
     </section>
 
     <!-- Juni -->
     <section id="juni" class="reveal">
-        <div class="section-eyebrow">The Real MVP</div>
-        <div class="section-heading">Meet <em>Juni.</em></div>
-        <div class="juni-gallery">
-            <div class="juni-card">
-                <img src="juni2.jpg" alt="Juni the dog">
-                <div class="juni-caption">Belly rubs or bust</div>
+        <div class="section-label">The Real Boss</div>
+        <div class="section-title">Meet <em>Juni.</em></div>
+        <div class="juni-layout">
+            <div class="juni-img-wrap">
+                <img src="juni2.jpg" alt="Juni">
             </div>
-            <div class="juni-card">
-                <img src="juni1.jpg" alt="Juni looking cute">
-                <div class="juni-caption">The face that runs this house</div>
+            <div class="juni-img-wrap">
+                <img src="juni1.jpg" alt="Juni">
             </div>
-            <div class="juni-card">
-                <img src="juni3.jpg" alt="Juni standing cute">
-                <div class="juni-caption">Main character energy</div>
+            <div class="juni-img-wrap">
+                <img src="juni3.jpg" alt="Juni">
             </div>
         </div>
     </section>
 
-    <!-- Quote -->
-    <div class="quote-section">
-        <div class="quote-text">She doesn't just find talent.<br>She sees it before anyone else does.</div>
-        <div class="quote-sub">That's the Liv difference.</div>
+    <!-- Statement -->
+    <div class="statement">
+        <div class="statement-text">Straight shooter. No BS.<br>Gets it done <em>every single time.</em></div>
+        <div class="statement-line"></div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-name">Olivia Rose Botti</div>
-        <a href="https://www.linkedin.com/in/olivia-botti/" class="footer-link" target="_blank">Connect on LinkedIn &rarr;</a>
-        <div class="footer-copy">&copy; 2026 Olivia Rose Botti &middot; All vibes reserved.</div>
+        <a href="https://www.linkedin.com/in/olivia-rees-benjamin-03518a126/" class="footer-link" target="_blank">LinkedIn &rarr;</a>
+        <div class="footer-copy">&copy; 2026 Olivia Rees-Benjamin</div>
     </footer>
 
     <script>
-        // ============ FALLING PETALS ============
-        const petalEmojis = ['\u{1F338}', '\u{1F33A}', '\u{1F33C}', '\u{1F33B}', '\u{2728}', '\u{1F49B}'];
-        function createPetal() {
-            const petal = document.createElement('div');
-            petal.className = 'petal';
-            petal.textContent = petalEmojis[Math.floor(Math.random() * petalEmojis.length)];
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.fontSize = (Math.random() * 14 + 10) + 'px';
-            petal.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            document.body.appendChild(petal);
-            setTimeout(() => petal.remove(), 8000);
-        }
-        setInterval(createPetal, 800);
-
-        // ============ CLICK HEARTS ============
-        const hearts = ['\u{1F497}', '\u{1F49C}', '\u{1F49B}', '\u{1F496}', '\u{2764}\u{FE0F}', '\u{1F90D}'];
-        document.addEventListener('click', (e) => {
-            for (let i = 0; i < 5; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'click-heart';
-                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-                heart.style.left = (e.clientX + (Math.random() - 0.5) * 50) + 'px';
-                heart.style.top = (e.clientY + (Math.random() - 0.5) * 30) + 'px';
-                heart.style.fontSize = (Math.random() * 16 + 14) + 'px';
-                document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 1000);
-            }
+        // Subtle cursor glow
+        const glow = document.getElementById('cursorGlow');
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
         });
 
-        // ============ SCROLL REVEAL ============
+        // Scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // ============ PARALLAX SHAPES ============
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            document.querySelectorAll('.shape').forEach((shape, i) => {
-                shape.style.transform = `translateY(${scrollY * (i + 1) * 0.03}px)`;
-            });
-        });
-
-        // ============ TILT ON FUN FACT HOVER ============
-        document.querySelectorAll('.fun-fact').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width - 0.5;
-                const y = (e.clientY - rect.top) / rect.height - 0.5;
-                card.style.transform = `translateX(10px) scale(1.02) perspective(600px) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
+        // Smooth row hover sound-like feedback (subtle scale)
+        document.querySelectorAll('.exp-row').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.transition = 'all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             });
         });
     </script>
